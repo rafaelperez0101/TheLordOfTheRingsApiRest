@@ -18,11 +18,13 @@ convalores entre 0 y 90.
 <h2>3. How to Use the Project<h2>
 Recommended extension: Talend API Tester - Free Edition
 
-GET -> http://localhost:8080/heroes/list
-       http://localhost:8080/heroes/list/0
+GET -> http://localhost:8080/heroes/list //muestra la lista de heroes
        
-POST -> http://localhost:8080/heroes/add
+       http://localhost:8080/heroes/list/0 //muestra a un heroe en especifico por medio de id
+       
+POST -> http://localhost:8080/heroes/add //agrega un nuevo heroe
   
+       ejemplo:
   {
   "id":3,
   "nombre":"Naomi",
