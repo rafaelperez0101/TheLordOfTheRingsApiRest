@@ -45,6 +45,6 @@ POST ->
   "heroes": "HUMANOS"
 }
 
-<h2>4. DIAGRAM MVC <h2>
+<h2>4. Diagrama MVC - UML <h2>
 
 <img width="667" alt="DIAGRAMA-MVC" src="https://user-images.githubusercontent.com/9613461/205744340-135c2be7-7e9f-406b-b639-19b6f7a092e4.PNG">
