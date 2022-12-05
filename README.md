@@ -29,11 +29,13 @@ GET ->
        http://localhost:8080/heroes/list/0
        
 POST -> 
+      
        //agrega un nuevo heroe
        
        http://localhost:8080/heroes/add 
   
-       ejemplo:
+
+ Ejemplo:
   {
   "id":3,
   "nombre":"Naomi",
