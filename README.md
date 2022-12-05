@@ -19,14 +19,18 @@ convalores entre 0 y 90.
 Recommended extension: Talend API Tester - Free Edition
 
 GET -> 
+      
        //muestra la lista de heroes
+       
        http://localhost:8080/heroes/list 
        
         //muestra a un heroe en especifico por medio de id
+       
        http://localhost:8080/heroes/list/0
        
 POST -> 
        //agrega un nuevo heroe
+       
        http://localhost:8080/heroes/add 
   
        ejemplo:
