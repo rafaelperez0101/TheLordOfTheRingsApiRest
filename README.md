@@ -35,7 +35,7 @@ POST ->
        http://localhost:8080/heroes/add 
   
 
- Ejemplo:
+<p> Ejemplo:<p>
   {
   "id":3,
   "nombre":"Naomi",
@@ -44,3 +44,7 @@ POST ->
   "armadura":4,
   "heroes": "HUMANOS"
 }
+
+<h2>4. DIAGRAM MVC<h2>
+
+<img width="667" alt="DIAGRAMA-MVC" src="https://user-images.githubusercontent.com/9613461/205744340-135c2be7-7e9f-406b-b639-19b6f7a092e4.PNG">
