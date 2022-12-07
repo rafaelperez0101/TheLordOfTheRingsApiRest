@@ -10,16 +10,17 @@ public class Turn {
 	
 	private String teamWinner;
 	
-    private Personajes ganadorRound;
+    private List<Personajes> ganadorRound;
 	
 	
 
-	public Turn(int heroesMuertos, int bestiasMuertas, String teamWinner, Personajes ganadorRound) {
+
+
+	public Turn(int heroesMuertos, int bestiasMuertas, String teamWinner, List<Personajes> ganadorRound) {
 		this.heroesMuertos = heroesMuertos;
 		this.bestiasMuertas = bestiasMuertas;
 		this.teamWinner = teamWinner;
-	
-		this.ganadorRound = ganadorRound;
+		this.setGanadorRound(ganadorRound);
 	}
 
 
@@ -54,13 +55,18 @@ public class Turn {
 		this.teamWinner = teamWinner;
 	}
 
-	public Personajes getGanadorRound() {
+
+
+	public List<Personajes> getGanadorRound() {
 		return ganadorRound;
 	}
 
-	public void setGanadorRound(Personajes ganadorRound) {
+
+
+	public void setGanadorRound(List<Personajes> ganadorRound) {
 		this.ganadorRound = ganadorRound;
 	}
+
 	
 	
 }

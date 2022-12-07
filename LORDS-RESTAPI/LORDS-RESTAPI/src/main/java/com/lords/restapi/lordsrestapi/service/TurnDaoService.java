@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.lords.restapi.lordsrestapi.model.Bestias;
 import com.lords.restapi.lordsrestapi.model.Heroes;
+import com.lords.restapi.lordsrestapi.model.Personajes;
 import com.lords.restapi.lordsrestapi.model.Turn;
 import com.lords.restapi.lordsrestapi.model.pBestias;
 import com.lords.restapi.lordsrestapi.model.pHeroes;
@@ -18,14 +19,17 @@ public class TurnDaoService {
 	 private static List<pBestias> pbestias = new ArrayList<>();
 	 private static List<Turn> turno = new ArrayList<>();
 	 private static Turn turn = new Turn();
+	 private static List<Personajes> ganadorRound = new ArrayList<>();
+		
+	 
 	    static{
 	        pheroes.add(new pHeroes(Heroes.HUMANOS, 0,"Abby",2,3,4));
-	        pheroes.add(new pHeroes(Heroes.HOBBITS, 1,"Agnes",3,6,5));
+	        pheroes.add(new pHeroes(Heroes.HOBBITS, 1,"Agnes",3,600,5));
 	        pheroes.add(new pHeroes(Heroes.ELFOS, 2,"Alexa",5,1,2));
 
-	        pbestias.add(new pBestias(Bestias.ORCOS, 3,"Daphne",2,3,2));
-	        pbestias.add(new pBestias(Bestias.TRASGOS, 4,"Ginger",4,4,3));
-	        pbestias.add(new pBestias(Bestias.ORCOS, 5,"Melody",1,3,4));
+	        pbestias.add(new pBestias(Bestias.ORCOS, 3,"Daphne",2,3,40));
+	        pbestias.add(new pBestias(Bestias.TRASGOS, 4,"Ginger",4,4,0));
+	        pbestias.add(new pBestias(Bestias.ORCOS, 5,"Melody",1,3,40));
 	        
 	        batalla(pheroes, pbestias);
 	  }
@@ -59,8 +63,9 @@ public class TurnDaoService {
 	                    
 	                    if (heroes.get(i).getVida() <= 0){
 	                        System.out.println("Jugador: " + heroes.get(i).getNombre() + " ha muerto");
-	                        turn.setGanadorRound(beasts.get(i));
-	                        turn.setHeroesMuertos(++i);
+	                        ganadorRound.add(beasts.get(i));
+	                        turn.setGanadorRound(ganadorRound);
+	                        turn.setHeroesMuertos(i);
 	                        System.out.println("------------------------------------------------------------------");
 	                        System.out.println("------------------------------------------------------------------");
 	                        break;
@@ -113,8 +118,9 @@ public class TurnDaoService {
 	                        System.out.println("Jugador: " + beasts.get(i).getNombre() + " ha muerto");
 	                        System.out.println("------------------------------------------------------------------");
 	                        System.out.println("------------------------------------------------------------------");
-	                        turn.setGanadorRound(heroes.get(i));
-	                        turn.setBestiasMuertas(++i);
+	                        ganadorRound.add(heroes.get(i));
+	                        turn.setGanadorRound(ganadorRound);
+	                        turn.setBestiasMuertas(i);
 	                        break;
 	                    }
 	                    System.out.println("------------------------------------------------------------------");
