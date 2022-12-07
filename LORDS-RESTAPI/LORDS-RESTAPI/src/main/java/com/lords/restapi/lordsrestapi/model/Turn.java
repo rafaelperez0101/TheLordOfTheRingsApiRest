@@ -1,7 +1,5 @@
 package com.lords.restapi.lordsrestapi.model;
 
-import java.util.List;
-
 public class Turn {
 	
 	private int heroesMuertos = 0;

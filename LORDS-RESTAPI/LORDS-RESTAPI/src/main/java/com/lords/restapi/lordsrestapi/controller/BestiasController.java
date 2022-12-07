@@ -2,9 +2,8 @@ package com.lords.restapi.lordsrestapi.controller;
 
 import com.lords.restapi.lordsrestapi.model.pBestias;
 import com.lords.restapi.lordsrestapi.service.PersonajeDAOService;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/bestias")
@@ -21,7 +20,7 @@ public class BestiasController {
         return service.findAllBeast();
     }
 
-    //GET one beast by name
+    //GET one beast by id
     @GetMapping("list/{id}")
     public pBestias retrieveHeroes(@PathVariable Integer id){
         return service.findBeast(id);
