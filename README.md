@@ -20,30 +20,105 @@ convalores entre 0 y 90.
 
 GET -> 
       
-       //muestra la lista de heroes
+    //muestra la lista de heroes
        
-       http://localhost:8080/heroes/list 
+     http://localhost:8080/heroes/list 
+      
+     http://localhost:8080/bestias/list 
        
-        //muestra a un heroe en especifico por medio de id
+   //muestra a un heroe en especifico por medio de id
        
-       http://localhost:8080/heroes/list/0
+     http://localhost:8080/heroes/list/0
+     
+     http://localhost:8080/bestias/list/0
        
 POST -> 
       
-       //agrega un nuevo heroe
+     //agrega un nuevo heroe
        
-       http://localhost:8080/heroes/add 
+     http://localhost:8080/heroes/add
+     
+     http://localhost:8080/bestias/add
+      
+      //para los turnos de las pelea
+      http://localhost:8080/turn/pelea
   
 
-<p> Ejemplo:<p>
+EJEMPLOS
+      
+      HEROES
+      
   {
-  "id":3,
-  "nombre":"Naomi",
+  "id":1,
+  "nombre":"Abby",
   "ataque": 3,
   "vida":3,
   "armadura":4,
   "heroes": "HUMANOS"
 }
+      
+{
+  "id":2,
+  "nombre":"Agnes",
+  "ataque": 2,
+  "vida":4,
+  "armadura":2,
+  "heroes": "HOBBITS"
+}
+ 
+      
+  {
+  "id":3,
+  "nombre":"Alexa",
+  "ataque": 5,
+  "vida":1,
+  "armadura":2,
+  "heroes": "ELFOS"
+}
+     
+      BESTIAS
+      
+{
+  "id":1,
+  "nombre":"Daphne",
+  "ataque": 2,
+  "vida":4,
+  "armadura":5,
+  "bestias": "ORCOS" 
+ }
+      
+{ "id":2, 
+    "nombre":"Ginger", 
+    "ataque": 4, 
+     "vida":4, 
+     "armadura":3, 
+     "bestias": "TRASGOS"
+}
+      
+{
+   "id": 3,
+  "nombre": "Melody",
+   "ataque":1,
+  "vida": 3,
+  "armadura": 4,
+  "bestias":"ORCOS"
+}
+      
+  TURNOS
+      
+  {
+ "heroesMuertos": 3,
+ "bestiasMuertas":0,
+ "teamWinner" : "Bestian ganan",
+ "ganadorRound": {{
+  "id":1,
+  "nombre":"Daphne",
+  "ataque": 2,
+  "vida":4,
+  "armadura":5,
+  "bestias": "ORCOS" 
+ }}}
+     
 
 <h2>4. Diagrama MVC - UML <h2>
 
