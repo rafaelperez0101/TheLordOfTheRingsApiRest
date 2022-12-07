@@ -17,4 +17,11 @@ public class pBestias extends Personajes{
     public void setBestias(Bestias bestias) {
         this.bestias = bestias;
     }
+
+
+	public int tirarDados() {
+		   int dado1 =(int) (Math.random() * 90);
+
+           return dado1;
+	}
 }

@@ -17,4 +17,14 @@ public class pHeroes extends Personajes{
         this.heroes = heroes;
     }
 
+	public int tirarDados() {
+		
+
+        int dado1 =(int) (Math.random() * 100);
+        int dado2 =(int) (Math.random() * 100);
+
+        return ((dado1 > dado2) ? dado1 : dado2);
+	}
+
+	
 }
