@@ -3,17 +3,21 @@ package com.lords.restapi.lordsrestapi.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.lords.restapi.lordsrestapi.model.Bestias;
 import com.lords.restapi.lordsrestapi.model.Heroes;
 import com.lords.restapi.lordsrestapi.model.Turn;
 import com.lords.restapi.lordsrestapi.model.pBestias;
 import com.lords.restapi.lordsrestapi.model.pHeroes;
 
+@Component
 public class TurnDaoService {
 
 	 private static List<pHeroes> pheroes = new ArrayList<>();
 	 private static List<pBestias> pbestias = new ArrayList<>();
 	 private static List<Turn> turno = new ArrayList<>();
+	 private static Turn turn = new Turn();
 	    static{
 	        pheroes.add(new pHeroes(Heroes.HUMANOS, 0,"Abby",2,3,4));
 	        pheroes.add(new pHeroes(Heroes.HOBBITS, 1,"Agnes",3,6,5));
@@ -45,18 +49,20 @@ public class TurnDaoService {
 	                    System.out.println("Ataque recibido: " + ataqueBestia);
 	                    int vida = heroes.get(i).getVida();
 
-	                    if(beasts.get(i) instanceof Orcos){
+	                    if(beasts.get(i).getBestias().equals(Bestias.ORCOS)){
 	                        heroes.get(i).setVida(vida - (ataqueBestia  - (heroes.get(i).getArmadura() - 10)));
 	                    }else{
 	                       heroes.get(i).setVida(vida - (ataqueBestia  - heroes.get(i).getArmadura() ));
 	                    }
 
 	                    System.out.println("Vida restante con la proteccion de la armadura: " +heroes.get(i).getVida());
+	                    
 	                    if (heroes.get(i).getVida() <= 0){
 	                        System.out.println("Jugador: " + heroes.get(i).getNombre() + " ha muerto");
+	                        turn.setGanadorRound(beasts.get(i));
+	                        turn.setHeroesMuertos(++i);
 	                        System.out.println("------------------------------------------------------------------");
 	                        System.out.println("------------------------------------------------------------------");
-	                        heroesMuertos++;
 	                        break;
 	                    }
 	                    System.out.println("------------------------------------------------------------------");
@@ -69,9 +75,9 @@ public class TurnDaoService {
 
 	                int ataqueHeroe = 0;
 
-	                if (heroes.get(i) instanceof  Hobbits){
+	                if (heroes.get(i).getHeroes().equals(Heroes.HOBBITS)){
 
-	                    if (beasts.get(i) instanceof Trasgos){
+	                    if (beasts.get(i).getBestias().equals(Bestias.TRASGOS)){
 	                        ataqueHeroe = heroes.get(i).tirarDados() - 5;
 	                    }else{
 	                        ataqueHeroe = heroes.get(i).tirarDados();
@@ -81,9 +87,9 @@ public class TurnDaoService {
 
 	                }
 
-	                if (heroes.get(i) instanceof  Elfos){
+	                if (heroes.get(i).getHeroes().equals(Heroes.ELFOS)){
 
-	                    if (beasts.get(i) instanceof Orcos){
+	                    if (beasts.get(i).getBestias().equals(Bestias.ORCOS)){
 	                        ataqueHeroe = heroes.get(i).tirarDados() + 10;
 	                    }else{
 	                        ataqueHeroe = heroes.get(i).tirarDados();
@@ -92,15 +98,12 @@ public class TurnDaoService {
 
 	                }
 
-	                if(batallones.heroes.get(i) instanceof Humanos){
+	                if(heroes.get(i).getHeroes().equals(Heroes.HUMANOS)){
 	                    ataqueHeroe = heroes.get(i).tirarDados();
 	                }
 
 	                if(ataqueHeroe > beasts.get(i).getArmadura()){
 
-	                    Thread.sleep(2000);
-	                    System.out.println("------------------------------------------------------------------");
-	                    System.out.println("------------------------------------------------------------------");
 	                    System.out.println(beasts.get(i).getNombre() + " recibe un ataque");
 	                    System.out.println("Ataque recibido: " + ataqueHeroe);
 	                    int vida = beasts.get(i).getVida();
@@ -110,7 +113,8 @@ public class TurnDaoService {
 	                        System.out.println("Jugador: " + beasts.get(i).getNombre() + " ha muerto");
 	                        System.out.println("------------------------------------------------------------------");
 	                        System.out.println("------------------------------------------------------------------");
-	                        bestiasMuertas++;
+	                        turn.setGanadorRound(heroes.get(i));
+	                        turn.setBestiasMuertas(++i);
 	                        break;
 	                    }
 	                    System.out.println("------------------------------------------------------------------");
@@ -121,13 +125,16 @@ public class TurnDaoService {
 	            }
 	        }
 
-	        System.out.println("--------------------------------------");
-	        System.out.println("--------------------------------------");
-	        System.out.println(bestiasMuertas > heroesMuertos ? board.win("Heroes ganan") : board.win("Bestias ganan"));
-	        System.out.println("--------------------------------------");
-	        System.out.println("--------------------------------------");
+	 
+	        if(turn.getBestiasMuertas() > turn.getHeroesMuertos()) {
+	        	turn.setTeamWinner("Heroes Ganan");
+	        } else {
+	        	
+	        	turn.setTeamWinner("Bestias ganan");
+	        } 
 
 
+	        turno.add(turn);
 	    }
 
 	public static List<Turn> getTurno() {
