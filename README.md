@@ -87,40 +87,37 @@ EJEMPLOS
   "bestias": "ORCOS" 
  }
       
- { "id":2, 
+{ "id":2, 
     "nombre":"Ginger", 
     "ataque": 4, 
      "vida":4, 
      "armadura":3, 
      "bestias": "TRASGOS"
-      }
+}
       
-      {
-      "id": 3,
-      "nombre": "Melody",
-      "ataque":1,
-      "vida": 3,
-      "armadura": 4,
-      "bestias":"ORCOS"
-      }
+{
+   "id": 3,
+  "nombre": "Melody",
+   "ataque":1,
+  "vida": 3,
+  "armadura": 4,
+  "bestias":"ORCOS"
+}
       
-     TURNOS
+  TURNOS
       
-     {
-      "heroesMuertos": 3,
-      "bestiasMuertas":0,
-      "teamWinner" : "Bestian ganan",
-      "ganadorRound": {
-            {
+  {
+ "heroesMuertos": 3,
+ "bestiasMuertas":0,
+ "teamWinner" : "Bestian ganan",
+ "ganadorRound": {{
   "id":1,
   "nombre":"Daphne",
   "ataque": 2,
   "vida":4,
   "armadura":5,
   "bestias": "ORCOS" 
- }
-            }
-      }
+ }}}
      
 
 <h2>4. Diagrama MVC - UML <h2>
