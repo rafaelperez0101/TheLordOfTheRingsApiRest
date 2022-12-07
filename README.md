@@ -50,6 +50,7 @@ POST ->
   "armadura":4,
   "heroes": "HUMANOS"
 }
+      
 {
   "id":1,
   "nombre":"Daphne",
