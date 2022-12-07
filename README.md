@@ -20,29 +20,43 @@ convalores entre 0 y 90.
 
 GET -> 
       
-       //muestra la lista de heroes
+    //muestra la lista de heroes
        
-       http://localhost:8080/heroes/list 
+     http://localhost:8080/heroes/list 
+      
+     http://localhost:8080/bestias/list 
        
-        //muestra a un heroe en especifico por medio de id
+   //muestra a un heroe en especifico por medio de id
        
-       http://localhost:8080/heroes/list/0
+     http://localhost:8080/heroes/list/0
+     
+     http://localhost:8080/bestias/list/0
        
 POST -> 
       
-       //agrega un nuevo heroe
+     //agrega un nuevo heroe
        
-       http://localhost:8080/heroes/add 
+     http://localhost:8080/heroes/add
+     
+     http://localhost:8080/bestias/add
   
 
 <p> Ejemplo:<p>
   {
-  "id":3,
+  "id":1,
   "nombre":"Naomi",
   "ataque": 3,
   "vida":3,
   "armadura":4,
   "heroes": "HUMANOS"
+}
+{
+  "id":1,
+  "nombre":"Daphne",
+  "ataque": 2,
+  "vida":4,
+  "armadura":5,
+  "bestias": "ORCOS"
 }
 
 <h2>4. Diagrama MVC - UML <h2>
