@@ -41,7 +41,10 @@ POST ->
      http://localhost:8080/bestias/add
   
 
-<p> Ejemplo:<p>
+EJEMPLOS
+      
+      HEROES
+      
   {
   "id":1,
   "nombre":"Naomi",
@@ -50,6 +53,16 @@ POST ->
   "armadura":4,
   "heroes": "HUMANOS"
 }
+        {
+  "id":2,
+  "nombre":"Melody",
+  "ataque": 2,
+  "vida":4,
+  "armadura":2,
+  "heroes": "HOBBITS"
+}
+      
+      BESTIAS
       
 {
   "id":1,
@@ -57,8 +70,15 @@ POST ->
   "ataque": 2,
   "vida":4,
   "armadura":5,
-  "bestias": "ORCOS"
-}
+  "bestias": "ORCOS" 
+ }
+ { "id":2, 
+    "nombre":"Juan", 
+    "ataque": 3, 
+     "vida":4, 
+     "armadura":5, 
+     "bestias": "TRASGOS" }
+
 
 <h2>4. Diagrama MVC - UML <h2>
 
