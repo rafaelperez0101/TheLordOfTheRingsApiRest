@@ -1,11 +1,9 @@
 package com.lords.restapi.lordsrestapi.controller;
 
-import com.lords.restapi.lordsrestapi.model.pBestias;
 import com.lords.restapi.lordsrestapi.model.pHeroes;
 import com.lords.restapi.lordsrestapi.service.PersonajeDAOService;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/heroes")
@@ -23,7 +21,7 @@ public class HeroesController {
         return service.findAllHeroes();
     }
 
-    //GET one hero by name
+    //GET one hero by id
     @GetMapping("list/{id}")
     public pHeroes retrieveHeroes(@PathVariable Integer id){
         return service.findHero(id);

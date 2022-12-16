@@ -1,16 +1,14 @@
 package com.lords.restapi.lordsrestapi.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.stereotype.Component;
-
 import com.lords.restapi.lordsrestapi.model.Bestias;
 import com.lords.restapi.lordsrestapi.model.Heroes;
 import com.lords.restapi.lordsrestapi.model.Personajes;
 import com.lords.restapi.lordsrestapi.model.Turn;
 import com.lords.restapi.lordsrestapi.model.pBestias;
 import com.lords.restapi.lordsrestapi.model.pHeroes;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Component;
 
 @Component
 public class TurnDaoService {
@@ -23,6 +21,7 @@ public class TurnDaoService {
 		
 	 
 	    static{
+
 	        pheroes.add(new pHeroes(Heroes.HUMANOS, 0,"Abby",2,3,4));
 	        pheroes.add(new pHeroes(Heroes.HOBBITS, 1,"Agnes",3,600,5));
 	        pheroes.add(new pHeroes(Heroes.ELFOS, 2,"Alexa",5,1,2));
@@ -32,6 +31,7 @@ public class TurnDaoService {
 	        pbestias.add(new pBestias(Bestias.ORCOS, 5,"Melody",1,3,40));
 	        
 	        batalla(pheroes, pbestias);
+
 	  }
 	
 	 public static void batalla(List<pHeroes> heroes, List<pBestias> beasts){
